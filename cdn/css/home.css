@@ -1,0 +1,120 @@
+.content {
+    margin: 0 !important;
+}
+
+.header {
+    text-align: center;
+    background: linear-gradient(45deg, #FEE100, #1EFB70);
+    color: #000;
+    padding: 20px 5px;
+    margin-bottom: 10px;
+}
+
+.sectionheader {
+    text-align: center;
+}
+
+.projectshowcase {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.projectshowcase .project {
+    width: 45vw;
+    aspect-ratio: 16/9;
+    margin: 5px;
+    position: relative;
+    transition: transform .1s ease-out;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px #888888;
+}
+
+.projectshowcase .project:hover {
+    transform: scale(1.01);
+}
+
+.projectshowcase .project .image {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.projectshowcase .project .title {
+    font-size: 1.1em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+    color: #43a166;
+}
+
+.skills {
+    margin: 0 40px;
+}
+
+.skills div {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    max-height: 150px;
+    margin: 5px;
+}
+
+.skills div:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.skills div img {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+}
+
+.skills div p {
+    margin: 10px;
+    width: 100%;
+    overflow: auto;
+}
+
+.contactme {
+    text-align: center;
+}
+
+.contactme a {
+    border: 1px solid #43a166;
+    border-radius: 50px;
+    color: #1a1a1a;
+    padding: 10px 40px;
+    background-color: transparent;
+    transition: all .2s;
+}
+
+.contactme a:hover {
+    box-shadow: 0px 0px 10px #888888;
+    opacity: 1;
+}
+
+.seemore {
+    color: #43a166;
+    font-size: medium;
+}
+
+.seemore::after {
+    content: 'See More >';
+}
+
+.ribbon {
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: -25px;
+    padding: 2px 30px;
+    transform: rotate(45deg);
+}

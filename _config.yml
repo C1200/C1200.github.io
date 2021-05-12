@@ -1,0 +1,33 @@
+title: C1200
+email: coreyw.ultimatemedia@gmail.com
+description: >-
+  Hi! I am Corey AKA C1200.
+  I am a hobbyist web dev
+  and video creator from
+  the UK.
+baseurl: "/"
+url: "https://C1200.js.org"
+
+social:
+  youtube: https://www.youtube.com/channel/UCAb_N6Y_txKV174_Ge5eh1g
+  twitter: https://twitter.com/C1200Games
+  discord: https://discord.me/ultimatemedia
+  twitch: https://twitch.tv/C1200OnTwitch
+  github: https://github.com/C1200
+  reddit: https://reddit.com/r/C1200
+  instagram: https://instagram.com/TheRealC1200
+  rss: /feed/projects.xml
+  email: mailto:coreyw.ultimatemedia@gmail.com
+  donate: /donate
+
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name
+
+plugins:
+  - jekyll-feed
+
+feed:
+  collections:
+    - projects

@@ -1,0 +1,55 @@
+---
+layout: base
+---
+
+<style>
+    #formcontainer,#contriblist {
+        display: none;
+        text-align: center;
+    }
+</style>
+
+<div id="formcontainer">
+    <h2></h2>
+    <form action="https://formsubmit.co/coreyw.ultimatemedia@gmail.com" method="POST">
+        <input type="hidden" name="_subject">
+        <input type="hidden" name="_next" value="https://C1200.js.org/contribute/thanks">
+        <input type="text" name="Name" placeholder="Name"><br>
+        <input type="email" name="Email" placeholder="Email"><br>
+        <input type="text" name="Subject" placeholder="Subject *" required><br>
+        <textarea name="Message" cols="20" rows="10" placeholder="Message *" required></textarea><br>
+        <input type="submit">
+        <p>* indicates required field</p>
+    </form>
+</div>
+
+<div id="contriblist"></div>
+
+<script>
+    var list = ["terminalbot"];
+
+    var query = new URLSearchParams(location.search);
+
+    var fc = document.getElementById("formcontainer");
+    var cl = document.getElementById("contriblist");
+
+    if (query.has("p") && list.find(s => s === query.get("p").toLowerCase())) {
+        fc.style.display = "block";
+
+        document.getElementsByName("_subject")[0].value = query.get("p").toLowerCase();
+        fc.getElementsByTagName("h2")[0].innerText = "Contributing to: " + query.get("p").toLowerCase();
+    } else {
+        cl.style.display = "block";
+
+        var clhead = document.createElement("h2");
+        clhead.innerText = "You can contribute to:";
+        cl.append(clhead);
+
+        list.forEach(s => {
+            var cllink = document.createElement("a");
+            cllink.innerText = s;
+            cllink.href = "?p=" + s;
+            cl.append(cllink);
+        });
+    }
+</script>

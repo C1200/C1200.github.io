@@ -1,0 +1,57 @@
+---
+layout: base
+---
+
+<script src="https://kit.fontawesome.com/bfa9b804f4.js" crossorigin="anonymous"></script>
+
+<style>
+    .donate {
+        background-color: #ffae00;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 5px;
+        width: 300px;
+        font-size: large;
+        margin: 5px;
+    }
+
+    .donate:hover {
+        cursor: pointer;
+        background-color: #ffae00c9;
+    }
+
+    table,th,td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+</style>
+
+<center>
+    <p>If you want to donate to me so I can get better hosting, better equipment, etc. then check out the links below.</p>
+    <!-- <a href="https://streamlabs.com/c1200" class="donate">Streamlabs</a><br> -->
+    <!-- <a href="https://paypal.me/coreywalker1554" class="donate">PayPal</a><br> -->
+
+    <button class="donate" onclick="donate('streamlabs')"><i class="fab fa-twitch"></i> Streamlabs</button><br>
+    <button class="donate" onclick="donate('paypal')"><i class="fab fa-paypal"></i> PayPal</button><br>
+
+    <h2>Project Codes</h2>
+    <p>Make your donation go directly to a specific project by typing the donate code at the beginning of your donation message.</p>
+    <table>
+        <tr>
+            <th>Project Name</th>
+            <th>Donate Code</th>
+        </tr>
+        <tr>
+            <td><a href="/projects/RepBot/">RepBot</a></td>
+            <td>RepBotDonate</td>
+        </tr>
+    </table>
+</center>
+
+<script>
+    function donate(method) {
+        if (method == "streamlabs") { window.open("https://streamlabs.com/c1200"); if (location.search === "?ref=live") return window.close(); }
+        else if (method == "paypal") { window.open("https://paypal.me/coreywalker1554"); if (location.search === "?ref=live") return window.close(); }
+    }
+</script>

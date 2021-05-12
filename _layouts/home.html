@@ -1,0 +1,65 @@
+---
+layout: base
+---
+
+<link rel="stylesheet" href="{{ "/cdn/css/home.css" | relative_url }}">
+
+<div class="header">
+    <h1>{{ site.title }}</h1>
+    <h4>{{ site.description }}</h4>
+</div>
+
+<h2 class="sectionheader">Featured Projects <a href="/projects/" class="seemore"></a></h2>
+
+<div class="projectshowcase">
+    <div class="project" onclick="location.replace('/projects/photoalbum')">
+        <div class="image" style="background-image: url('/cdn/img/photoalbumshowcase.png');"></div>
+        <div class="title">PhotoAlbum</div>
+    </div>
+
+    <div class="project" onclick="location.replace('/projects/rcanarchy')">
+        <div class="image" style="background-image: url('/cdn/img/rcanarchyshowcase.png');"></div>
+        <div class="title">RodzCraftAnarchy</div>
+    </div>
+    
+    <div class="project" onclick="location.replace('/projects/repbot')">
+        <div class="image" style="background-image: url('/cdn/img/repbotshowcase.png');"></div>
+        <div class="title">RepBot</div>
+    </div>
+    
+    <div class="project" onclick="location.replace('/projects/therodway-rf-gd')">
+        <div class="image" style="background-image: url('/cdn/img/therodway.rf.gd1.png');"></div>
+        <div class="title">TheRodway.rf.gd</div>
+    </div>
+</div>
+
+<h2 class="sectionheader">Skills</h2>
+
+<div class="skills">
+    <div>
+        <img src="/cdn/img/nodejs.svg">
+        <p>
+            <b>Node.JS:</b>
+            <br>
+            With my self-taught knowledge I can create a basic Node app.
+            I also know my way around Express, Electron, Discord.js and
+            more packages.
+        </p>
+    </div>
+    <div>
+        <img src="/cdn/img/HTML5.svg">
+        <p>
+            <b>Front-end development:</b>
+            <br>
+            I can create nice looking UIs with HTML, CSS and JavaScript.
+            I know how to use DOM or jQuery to manipulate webpages, how to animate
+            with CSS and more.
+        </p>
+    </div>
+</div>
+
+<h2 class="sectionheader">Want to talk?</h2>
+
+<div class="contactme">
+    <a href="/contact">Contact Me</a>
+</div>

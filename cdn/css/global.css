@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0px;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+.content {
+    margin: 14px;
+    min-height: 100vh;
+}

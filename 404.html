@@ -1,0 +1,37 @@
+---
+permalink: /404.html
+layout: base
+
+title: You have found an error!
+---
+
+<style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  a.home {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+  }
+</style>
+
+<div class="container">
+  <h1>404</h1>
+
+  <p><strong>Page not found :(</strong></p>
+  <p id="message">The requested page could not be found.</p>
+  <a href="/" class="home">Take me home</a>
+</div>
+
+<script>
+  document.getElementById("message").innerText = `The requested page: "${ location.pathname }" could not be found.`
+</script>

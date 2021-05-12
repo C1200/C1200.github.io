@@ -1,0 +1,99 @@
+---
+layout: base
+---
+
+<script>
+    window.onscroll = () => {
+        scroll(0,0);
+    }
+    function onwardsTo(here) {
+        if (here === "site") return location.replace("/");
+        if (here === "youtube") return window.open("https://www.youtube.com/channel/UCAb_N6Y_txKV174_Ge5eh1g");
+        if (here === "twitch") return window.open("https://twitch.tv/C1200OnTwitch");
+        if (here === "twitter") return window.open("https://twitter.com/C1200Games");
+    }
+</script>
+
+<style>
+    body {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        background-repeat: no-repeat;
+        animation: gradient 15s ease infinite;
+        margin-bottom: 100%;
+        overflow: hidden;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 5px;
+        left: -50px;
+    }
+
+    .btn {
+        background-color: transparent;
+        border: none;
+        height: 30px;
+        width: 30px;
+        padding: 0;
+        font-size: x-large;
+        cursor: pointer;
+        margin: 2px;
+    }
+
+    .btn i {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+    }
+</style>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<img src="../cdn/me.jpg" height="100px" width="100px" style="border: 1px solid black; border-radius: 50%; float: left;"><br>
+<div style="float: left; margin-left: 10px;">
+    <h3>Welcome!</h3>
+    <p>Hi! I am Corey AKA C1200. I am a hobbyist web dev and video<br>creator from the UK.</p>
+    <!--<p>
+        <button onclick="onwardsTo('site')">Onwards!</button>
+        <b style="padding-left: 10px; padding-right: 10px;">-OR-</b>
+        Check Out:
+        <button onclick="onwardsTo('youtube')">My YouTube</button>
+        <button onclick="onwardsTo('twitch')">My Twitch</button>
+        <button onclick="onwardsTo('twitter')"button>My Twitter</button>
+    </p>-->
+
+    <div class="btn-container">
+        <button class="btn" onclick="onwardsTo('site')"><i class="material-icons">language</i></button>
+        <button class="btn" onclick="onwardsTo('youtube')"><i class="fa fa-youtube-play"></i></button>
+        <button class="btn" onclick="onwardsTo('twitter')"><i class="fa fa-twitter"></i></button>
+        <button class="btn" onclick="onwardsTo('twitch')"><i class="fa fa-twitch"></i></button>
+    </div>
+</div>

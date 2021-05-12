@@ -1,0 +1,17 @@
+---
+layout: base
+---
+
+<style>
+    img {
+        width: 50%;
+    }
+</style>
+
+<h2>{{ page.title }}</h2>
+
+<p>Tags: {{ page.tags | join: ', '}}</p>
+<p>Status: {{ page.status }}</p>
+<p>Description: {{ page.description }}</p>
+
+{{ content }}

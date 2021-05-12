@@ -1,0 +1,15 @@
+[
+    {
+        "id": "manwleg",
+        "title": "Single Man With Leg",
+        "url": "/cdn/snd/singlemanwithleg.mp3",
+        "video": false,
+        "cover": "/cdn/img/singlemanwithlegalbum.png"
+    },
+    {
+        "id": "test",
+        "title": "test",
+        "url": "https://production.assets.clips.twitchcdn.net/AT-cm%7C1148468438.mp4?sig=7c487b76ddc5fcc297e2d29bc7bd628ab060494c&token=%7B%22authorization%22%3A%7B%22forbidden%22%3Afalse%2C%22reason%22%3A%22%22%7D%2C%22clip_uri%22%3A%22%22%2C%22device_id%22%3A%22OSrOP4HVWmssenaXMK0ZReGq9x8Aw0Ao%22%2C%22expires%22%3A1620819893%2C%22user_id%22%3A%22246647004%22%2C%22version%22%3A2%7D",
+        "video": true
+    }
+]

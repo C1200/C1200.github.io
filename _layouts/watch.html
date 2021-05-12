@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/cdn/css/watch.css">
+    <link rel="stylesheet" href="/cdn/css/scroll.css">
+</head>
+<body>
+    <div class="container">
+        <div class="c-video">
+            <h4 class="title"></h4>
+            <video class="video"></video>
+            <div class="controls">
+                <div class="timebar">
+                    <div class="time"></div>
+                </div>
+                <div class="buttons">
+                    <button id="playpause" class="play"></button>
+                    <button id="fullscrn" class="full"></button>
+                    <input type="range" id="vol" min="0" max="100">
+                    <a href="javascript:open(location.href)">C1200</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var videos = [];
+
+        {% for video in site.data.videos %}
+        videos.push({
+            "id": "{{ video.id }}",
+            "title": "{{ video.title }}",
+            "url": "{{ video.url }}",
+            "video": {{ video.video }}
+            {% if video.cover %}
+            ,"cover": "{{ video.cover }}"
+            {% endif %}
+        });
+        {% endfor %}
+    </script>
+    <script src="/cdn/js/watch.js"></script>
+</body>
+</html>

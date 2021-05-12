@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    display: flex;
+    background: #ccc;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.video {
+    width: 100%;
+}
+
+.c-video {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container.full {
+    background: #000;
+}
+
+.container.full .c-video {
+    max-width: 100%;
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    transform: translateY(-60px);
+    transition: all .2s;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 50;
+}
+
+.controls {
+    display: flex;
+    position: absolute;
+    bottom: 4px;
+    width: 100%;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(100%);
+    transition: all .2s;
+    z-index: 50;
+}
+
+.c-video:hover .controls {
+    transform: translateY(0);
+}
+
+.c-video:hover .title {
+    transform: translateY(-25px);
+}
+
+.buttons {
+    padding: 10px;
+}
+
+.buttons #playpause {
+    background: none;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.buttons #playpause:before {
+    content: '\f04b';
+    font-family: "FontAwesome";
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.buttons #fullscrn {
+    background: none;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.buttons #fullscrn:before {
+    content: '\f065';
+    font-family: "FontAwesome";
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.buttons button.play:before {
+    content: '\f04b' !important;
+}
+
+.buttons button.pause:before {
+    content: '\f04c' !important;
+}
+
+.buttons button.end:before {
+    content: '\f021' !important;
+}
+
+.buttons button.full:before {
+    content: '\f065' !important;
+}
+
+.buttons button.nofull:before {
+    content: '\f066' !important;
+}
+
+.buttons a {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-50%);
+}
+
+.timebar {
+    height: 5px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+}
+
+.time {
+    height: 5px;
+    width: 0;
+    background-color: red;
+}
+
+.coverimg {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.error {
+    background-color: gray;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.error:before {
+    content: '\f071';
+    font-family: 'FontAwesome';
+    margin-right: 5px;
+}
