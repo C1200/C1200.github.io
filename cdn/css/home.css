@@ -4,10 +4,14 @@
 
 .header {
     text-align: center;
-    background: linear-gradient(45deg, #FEE100, #1EFB70);
-    color: #000;
-    padding: 20px 5px;
+    background: linear-gradient(45deg, #0062FF, #8400FF);
+    color: #fff;
+    padding: 60px 5px;
     margin-bottom: 10px;
+}
+
+.header h1,h4 {
+    margin: 10px;
 }
 
 .sectionheader {
@@ -17,7 +21,6 @@
 .projectshowcase {
     padding: 5px;
     display: grid;
-    grid-template-columns: auto auto;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -25,13 +28,25 @@
 }
 
 .projectshowcase .project {
-    width: 45vw;
+    width: 99%;
     aspect-ratio: 16/9;
     margin: 5px;
     position: relative;
     transition: transform .1s ease-out;
     overflow: hidden;
     box-shadow: 5px 5px 10px #888888;
+}
+
+@media only screen and (max-width: 699px) {
+    .projectshowcase {
+        grid-template-columns: auto;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .projectshowcase {
+        grid-template-columns: auto auto;
+    }
 }
 
 .projectshowcase .project:hover {

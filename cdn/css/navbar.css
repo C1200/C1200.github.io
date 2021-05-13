@@ -20,6 +20,5 @@
 }
 
 .navbar a:hover {
-    background: linear-gradient(45deg, #FEE100, #1EFB70);
-    color: #000;
+    background: linear-gradient(45deg, #0062FF, #8400FF);
 }
