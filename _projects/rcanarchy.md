@@ -8,7 +8,10 @@ tags:
  - Spigot
  - Bukkit
 status: Done
+year: 2021
 description: The plugin used for the RodzCraft Anarchy event.
+
+metaimg: /cdn/img/rcanarchyshowcase.png
 ---
 
 ## Links

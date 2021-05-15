@@ -19,18 +19,31 @@ layout: base
     .project .projecttags {
         display: none;
     }
+    
+    .searchcontainer {
+        margin-bottom: 20px;
+    }
 </style>
 
-Search: <input type="text" id="search">
+<div class="searchcontainer">
+    Search:
+    <input type="text" id="search">
+    Sort:
+    <select id="sort">
+        <option value="az">Title A-Z</option>
+        <option value="za">Title Z-A</option>
+        <option value="ye">Year Earliest</option>
+        <option value="yl">Year Latest</option>
+    </select>
+</div>
 
 <div id="projects">
 {% for project in site.projects %}
     {% if project.showonprojecthome != false %}
-        <div class="project">
+        <div class="project" data-tags="{{ project.tags | join: ' ' }}" data-year="{{ project.year }}">
             <a class="projecttitle" href="{{ project.url }}">{{ project.title }}</a><br>
             <a class="projectlink" href="{{ project.url }}">{{ project.url | prepend: site.url }}</a>
             <p class="projectdesc">{{ project.description }}</p>
-            <p class="projecttags">{{ project.tags | join: ' ' }}</p>
         </div>
     {% endif %}
 {% endfor %}
@@ -49,12 +62,11 @@ Search: <input type="text" id="search">
             var text1 = project.getElementsByClassName("projecttitle")[0];
             var text2 = project.getElementsByClassName("projectlink")[0];
             var text3 = project.getElementsByClassName("projectdesc")[0];
-            var text4 = project.getElementsByClassName("projecttags")[0];
+            var text4 = project.getAttribute("data-tags");
 
             text1 = text1.textContent || text1.innerText;
             text2 = text2.textContent || text2.innerText;
             text3 = text3.textContent || text3.innerText;
-            text4 = text4.textContent || text4.innerText;
 
             if (text1.toUpperCase().indexOf(input) > -1) containssearch = true;
             if (text2.toUpperCase().indexOf(input) > -1) containssearch = true;
@@ -69,11 +81,62 @@ Search: <input type="text" id="search">
         }
     }
 
+    function sort(f="az") {
+        var projects = [];
+        var p = document.getElementById("projects").getElementsByTagName("div");
+
+        //To Array
+        for (var i = 0; i < p.length; i++) {
+            projects.push(p[i]);
+        }
+
+        switch (f) {
+            case "az": // Title A - Z
+                projects.sort((a,b) =>
+                    a.getElementsByClassName("projecttitle")[0].innerHTML.charCodeAt(0) -
+                    b.getElementsByClassName("projecttitle")[0].innerHTML.charCodeAt(0)
+                );
+                break;
+            case "za": // Title Z - A
+                projects.sort((a,b) =>
+                    a.getElementsByClassName("projecttitle")[0].innerHTML.charCodeAt(0) -
+                    b.getElementsByClassName("projecttitle")[0].innerHTML.charCodeAt(0)
+                );
+                projects.reverse();
+                break;
+            case "ye": // Year Earliest
+                projects.sort((a,b) =>
+                    parseInt(a.getAttribute("data-year")) -
+                    parseInt(b.getAttribute("data-year"))
+                );
+                break;
+            case "yl": // Year Latest
+                projects.sort((a,b) =>
+                    parseInt(a.getAttribute("data-year")) -
+                    parseInt(b.getAttribute("data-year"))
+                );
+                projects.reverse();
+                break;
+        }
+
+        document.getElementById("projects").innerHTML = "";
+        projects.forEach((project) => document.getElementById("projects").append(project));
+    }
+
     document.getElementById("search").value = location.hash.substr(1);
     search(location.hash.substr(1));
 
+    var params = new URLSearchParams(location.search);
+    document.getElementById("sort").value = params.get("sort");
+    sort(params.has("sort") ? params.get("sort") : "az");
+
     document.getElementById("search").oninput = () => {
         location.hash = document.getElementById("search").value;
+    }
+
+    document.getElementById("sort").onchange = () => {
+        params.set("sort", document.getElementById("sort").value);
+        location.search = params.toString();
     }
 
     window.onhashchange = () => {

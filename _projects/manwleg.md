@@ -5,7 +5,10 @@ title: Single Man With Leg
 tags:
  - Music
 status: Done
+year: 2021
 description: A piece of music that I made with Travis.
+
+metaimg: /cdn/img/singlemanwithlegalbum.png
 ---
 
 <iframe src="/watch?v=manwleg" width="850px" height="500px"></iframe>

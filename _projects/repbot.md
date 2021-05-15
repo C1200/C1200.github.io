@@ -6,7 +6,10 @@ tags:
  - Discord
  - NodeJS
 status: Done
+year: 2020
 description: A private bot made for The Rodway's Discord Server to track staff member points.
+
+metaimg: /cdn/img/repbotshowcase.png
 ---
 
 ## Links

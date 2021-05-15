@@ -6,6 +6,7 @@ tags:
  - NodeJS
  - Discord
 status: Early Development
+year: 2020
 description: A Discord Bot that is like a linux (bash) terminal.
 ---
 

@@ -29,7 +29,7 @@
 
 .projectshowcase .project {
     width: 99%;
-    aspect-ratio: 16/9;
+    padding-top: 56.25%;
     margin: 5px;
     position: relative;
     transition: transform .1s ease-out;
@@ -53,20 +53,33 @@
     transform: scale(1.01);
 }
 
+.projectshowcase .project:hover .title {
+    transform: translate(-50%, -50%);
+}
+
 .projectshowcase .project .image {
     height: 100%;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .projectshowcase .project .title {
     font-size: 1.1em;
     position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 5px;
-    color: #43a166;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, 50%);
+    color: #fff;
+    padding: 50%;
+    background: linear-gradient(-45deg, rgba(238, 119, 82, 0.8), rgba(231, 60, 126, 0.8), rgba(35, 166, 213, 0.8), rgba(35, 213, 171, 0.8));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    transition: all .5s;
 }
 
 .skills {

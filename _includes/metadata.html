@@ -1,11 +1,46 @@
+<!-- Start SEO -->
+
+<!-- Type -->
+<meta property="og:type" content="website" />
+
+<!-- Title -->
 <meta property="og:title" content="{{ page.title }} | {{ site.title }}" />
+<meta property="og:site_name" content="{{ site.title }}" />
+
+<!-- Locale -->
 <meta property="og:locale" content="en_US" />
 
 {% if page.description %}
+<!-- Description -->
 <meta name="description" content="{{ page.description }}" />
 <meta property="og:description" content="{{ page.description }}" />
 {% endif %}
 
+{% if page.tags %}
+<!-- Tags -->
+<meta property="og:keywords" content="{{ page.tags | join: ',' }}" />
+{% endif %}
+
+{% if page.metaimg %}
+<!-- Images -->
+<meta property="twitter:image" content="{{ page.metaimg | absolute_url }}" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="og:image" content="{{ page.metaimg | absolute_url }}" />
+{% else %}
+<!-- Images -->
+<meta property="twitter:image" content="{{ "/cdn/me.jpg" | absolute_url }}" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="og:image" content="{{ "/cdn/me.jpg" | absolute_url }}" />
+{% endif %}
+
+<!-- URL -->
 <link rel="canonical" href="{{ page.url | absolute_url }}" />
 <meta property="og:url" content="{{ page.url | absolute_url }}" />
-<meta property="og:site_name" content="{{ site.title }}" />
+
+<!-- Twitter @ -->
+<meta property="twitter:site" content="{{ site.social.twitterat | prepend: '@' }}" />
+<meta property="twitter:site:id" content="{{ site.social.twitterat | prepend: '@' }}" />
+<meta property="twitter:creator" content="{{ site.social.twitterat | prepend: '@' }}" />
+<meta property="twitter:creator:id" content="{{ site.social.twitterat | prepend: '@' }}" />
+
+<!-- End SEO -->

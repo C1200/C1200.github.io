@@ -7,7 +7,10 @@ tags:
  - CSS
  - JavaScript
 status: Done
+year: 2021
 description: A nice one page site to display photos.
+
+metaimg: /cdn/img/photoalbumshowcase.png
 ---
 
 ## Links

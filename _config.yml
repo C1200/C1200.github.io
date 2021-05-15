@@ -11,6 +11,7 @@ url: "https://C1200.js.org"
 social:
   youtube: https://www.youtube.com/channel/UCAb_N6Y_txKV174_Ge5eh1g
   twitter: https://twitter.com/C1200Games
+  twitterat: C1200Games
   discord: https://discord.me/ultimatemedia
   twitch: https://twitch.tv/C1200OnTwitch
   github: https://github.com/C1200
@@ -27,6 +28,7 @@ collections:
 
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 
 feed:
   collections:
