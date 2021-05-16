@@ -24,4 +24,5 @@ a:hover {
 
 .content {
     margin: 14px;
+    min-height: 100vh;
 }
