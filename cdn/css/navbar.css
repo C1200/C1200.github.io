@@ -1,24 +1,88 @@
-.navbar {
-    overflow: hidden;
-    background-color: #333;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+/* Mobile Navbar */
+
+@media only screen and (max-width: 699px) {
+    .mobilenav {
+        overflow: hidden;
+        background-color: #333;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .mobilenav a {
+        float: right;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .mobilenav a::before {
+        content: '\e5d2';
+        font-family: 'Material Icons';
+        font-size: 20px;
+    }
+
+    .navbar {
+        display: none;
+        background-color: #575757;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 99;
+        height: 100vh;
+        width: 100vw;
+        transition: all .4s;
+        grid-template-rows: max-content max-content max-content max-content;
+        align-content: center;
+    }
+
+    .navbar.show {
+        display: grid;
+    }
+
+    .navbar a {
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+    }
 }
 
-.navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-}
+/* Desktop Navbar */
 
-.navbar a:first-child {
-    border-right: 1px solid rgb(255, 255, 255);
-}
+@media only screen and (min-width: 700px) {
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+    }
+    
+    .navbar a:first-child {
+        border-right: 1px solid rgb(255, 255, 255);
+    }
+    
+    .navbar a:hover {
+        background: linear-gradient(45deg, #0062FF, #8400FF);
+    }
 
-.navbar a:hover {
-    background: linear-gradient(45deg, #0062FF, #8400FF);
+    .mobilenav {
+        display: none;
+    }
 }

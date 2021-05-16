@@ -13,6 +13,7 @@ window.addEventListener("load", () => {
         var As = document.getElementsByTagName("a");
 
         for (a of As) {
+            if (!a.href) continue;
             if (new URL(a.href).origin !== location.origin) {
                 a.href = "/redirect?url=" + a.href;
             }
