@@ -51,6 +51,10 @@ if (!search.has("v")) {
 
     if (search.get("autoplay") === "true") togglePlayback();
     if (search.get("muted") === "true") video.volume = 0;
+    if (search.get("embed") === "true") {
+        container.classList.add("full");
+        fullscrn.style.display = "none";
+    }
 }
 
 function togglePlayback() {
