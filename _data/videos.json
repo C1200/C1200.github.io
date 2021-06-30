@@ -4,6 +4,13 @@
         "title": "Single Man With Leg",
         "url": "/cdn/snd/singlemanwithleg.mp3",
         "video": false,
-        "cover": "/cdn/img/singlemanwithlegalbum.png"
+        "cover": "/cdn/img/singlemanwithlegalbum.png",
+        "elsewhere": [
+            {
+                "name": "YouTube",
+                "url": "https://www.youtube.com/watch?v=ICAJdIhOdxs",
+                "fa": "fa-youtube-play"
+            }
+        ]
     }
 ]

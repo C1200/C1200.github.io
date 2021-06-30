@@ -1,6 +1,7 @@
 var search = new URLSearchParams(location.search);
 
 var container = document.getElementsByClassName("container")[0];
+var elsewhere = document.getElementsByClassName("elsewhere")[0];
 
 var video = document.getElementsByTagName("video")[0];
 var source = document.createElement("source");
@@ -15,14 +16,27 @@ var time = document.getElementsByClassName("time")[0];
 var isFullscreen = false;
 
 if (!search.has("v")) {
-    document.body.innerHTML = "<div class=\"error\">There was an error while loading that!</div>";
+    document.body.innerHTML =
+        '<div class="error">There was an error while loading that!</div>';
 } else {
-    var v = videos.filter(v => v.id === search.get("v"))[0];
+    var v = videos.filter((v) => v.id === search.get("v"))[0];
 
-    if (!v) document.body.innerHTML = "<div class=\"error\">There was an error while loading that!</div>";
+    if (!v)
+        document.body.innerHTML =
+            '<div class="error">There was an error while loading that!</div>';
 
     source.src = v.url;
     video.append(source);
+
+    elsewhere.innerHTML = v.elsewhere
+        .map(
+            (where) =>
+                `<a href="${where.url}">
+                    ${where.fa ? `<i class="fa ${where.fa}"></i>` : ""}
+                    ${v.video ? "Watch on" : "Listen on"} ${where.name}
+                </a>`
+        )
+        .join("");
 
     title.innerText = v.title;
     document.title = v.title + " | C1200";
@@ -31,7 +45,7 @@ if (!search.has("v")) {
         var cover = document.createElement("img");
         cover.src = v.cover;
         cover.className = "coverimg";
-        video.style.background = "lightblue"
+        video.style.background = "lightblue";
         document.getElementsByClassName("c-video")[0].append(cover);
     }
 
@@ -55,7 +69,7 @@ function timeUpdate() {
     }
 
     var timew = video.currentTime / video.duration;
-    time.style.width = (timew * 100) + "%";
+    time.style.width = timew * 100 + "%";
 }
 
 function volUpdate() {
@@ -91,8 +105,12 @@ video.addEventListener("timeupdate", timeUpdate);
 video.addEventListener("volumechange", volUpdate);
 vol.addEventListener("change", volUpdate);
 
-video.addEventListener("contextmenu", (e) => {e.preventDefault();});
-cover.addEventListener("contextmenu", (e) => {e.preventDefault();});
+video.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+});
+cover.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+});
 
 document.addEventListener("fullscreenchange", () => {
     if (!isFullscreen) {

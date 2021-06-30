@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/cdn/css/scroll.css">
 
     {% include metadata.html %}
+
+    <script>var videos = {{ site.data.videos | jsonify }};</script>
 </head>
 <body>
     <div class="container">
@@ -27,23 +29,10 @@
                 </div>
             </div>
         </div>
+
+        <div class="elsewhere"></div>
     </div>
 
-    <script>
-        var videos = [];
-
-        {% for video in site.data.videos %}
-        videos.push({
-            "id": "{{ video.id }}",
-            "title": "{{ video.title }}",
-            "url": "{{ video.url }}",
-            "video": {{ video.video }}
-            {% if video.cover %}
-            ,"cover": "{{ video.cover }}"
-            {% endif %}
-        });
-        {% endfor %}
-    </script>
     <script src="/cdn/js/watch.js"></script>
 </body>
 </html>
