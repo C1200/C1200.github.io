@@ -31,7 +31,11 @@ if (!search.has("v")) {
     elsewhere.innerHTML = v.elsewhere
         .map(
             (where) =>
-                `<a href="${where.url}">
+                `<a href="${where.url}"${
+                    where.soon
+                        ? ' style="filter: grayscale(1); cursor: not-allowed;" title="Coming Soon"'
+                        : ""
+                }>
                     ${where.fa ? `<i class="fa ${where.fa}"></i>` : ""}
                     ${v.video ? "Watch on" : "Listen on"} ${where.name}
                 </a>`

@@ -10,7 +10,22 @@
                 "name": "YouTube",
                 "url": "https://www.youtube.com/watch?v=ICAJdIhOdxs",
                 "fa": "fa-youtube-play"
-            }
+            },
+            {
+                "name": "Spotify",
+                "url": "https://open.spotify.com/track/7sK1dEwt64LlNM680wHkUS",
+                "fa": "fa-spotify"
+            },
+            {
+                "name": "Apple Music",
+                "url": "https://music.apple.com/us/album/single-man-with-leg/1574031180?i=1574031182",
+                "fa": "fa-apple"
+            },
+            {
+                "name": "Deezer",
+                "url": "https://www.deezer.com/track/1416952872"
+            },
+            { "name": "TIDAL", "url": "#", "soon": true }
         ]
     }
 ]
