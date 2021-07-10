@@ -29,6 +29,10 @@
 
     <div class="content">{{ content }}</div>
 
+    {% if page.layout == "ref" %}
+    <img src="/cdn/img/refbg.svg" style="position: fixed; z-index: -1;" />
+    {% endif %}
+
     <div class="footer">
         <center>
             <p>Copyright &copy; C1200</p>
