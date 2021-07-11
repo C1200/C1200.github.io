@@ -1,0 +1,146 @@
+---
+layout: base
+---
+
+<link rel="stylesheet" href="/cdn/css/monokaicodehighlight.css">
+
+<style>
+    a {
+        text-decoration: underline;
+    }
+
+    .content {
+        display: flex;
+        margin: 0;
+    }
+
+    .docsnav {
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+        background: #555;
+        width: 200px;
+    }
+
+    .docsnav * {
+        list-style: none;
+        color: white;
+        text-decoration: none;
+    }
+
+    .active > a {
+        color: palegreen;
+    }
+
+    .navchildren {
+        padding: 0;
+        display: none;
+    }
+
+    .active .navchildren {
+        display: block;
+    }
+
+    .navchild:last-child::before {
+        content: '└─';
+    }
+
+    .navchild::before {
+        content: '├─';
+    }
+
+    .type {
+        font-size: small;
+        background: #aaa;
+        border: 1px solid #666;
+        border-radius: 5px;
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+    main {
+        flex-grow: 1;
+        padding: 10px;
+    }
+
+    .contentsmenu {
+        padding: 10px;
+        border: 1px solid #888;
+        border-radius: 5px;
+        width: max-content;
+    }
+
+    .contentsmenu ul {
+        margin: 0;
+    }
+
+    pre.highlight {
+        padding: 10px;
+        color: white;
+    }
+
+    .highlight .dl {
+        color: #e6db74;
+    }
+
+    .footer {
+        margin: 0;
+    }
+</style>
+
+<ul class="docsnav">
+    {% assign nodes = site.docs | sort: 'order' %}
+
+    <li class="navitem{% if "/docs/index" == page.url %} active{% endif %}">
+        <a href="/docs">Home</a>
+    </li>
+
+    {% for node in nodes %}
+        {% if node.parent == nil %}
+            {% unless node.hide %}
+                <li class="navitem{% if node.url == page.url or page.parent == node.title %} active{% endif %}">
+                    <a href="{{ node.url }}">{{ node.title }}</a>
+
+                    {% if node.hasChildren %}
+                        {% assign children = nodes | where: "parent", node.title %}
+
+                        <ul class="navchildren">
+                            {% for child in children %}
+                                <li class="navchild{% if child.url == page.url %} active{% endif %}">
+                                    <a href="{{ child.url }}">{{ child.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endunless %}
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<main>
+    <h1>
+        {{ page.title }}
+        {% if page.type %}
+            <span class="type">{{ page.type }}</span>
+        {% endif %}
+    </h1>
+
+    {% if page.hasChildren %}
+        {% assign contents = site.docs | where: "parent", page.title %}
+
+        <div class="contentsmenu">
+            Contents:
+
+            <ul>
+                {% for c in contents %}
+                    <li>
+                        <a href="{{ c.url }}">{{ c.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {{ content }}
+</main>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | {{ site.title }}</title>
+    <title>{{ page.title }} | {{ site.title }}{% if page.layout == "docs" %} Docs{% endif %}</title>
 
     <link rel="stylesheet" href="{{ "/cdn/css/global.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/cdn/css/scroll.css" | relative_url }}">
@@ -22,6 +22,7 @@
         <a href="{{ "/" | relative_url }}">C1200</a>
         <a href="{{ "/projects" | relative_url }}">Projects</a>
         <a href="{{ "/contact" | relative_url }}">Contact</a>
+        <a href="{{ "/docs" | relative_url }}">Docs</a>
     </div>
     <div class="mobilenav">
         <a onclick="toggleMobileNav()"></a>
