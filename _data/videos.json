@@ -25,7 +25,17 @@
                 "name": "Deezer",
                 "url": "https://www.deezer.com/track/1416952872"
             },
-            { "name": "TIDAL", "url": "#", "soon": true }
+            {
+                "name": "TIDAL",
+                "url": "https://listen.tidal.com/album/189118185/track/189118188"
+            }
         ]
+    },
+    {
+        "id": "CzWNt0sHtl",
+        "title": "Wiicreation So Far",
+        "url": "https://c1200.wants-to.party/n3vVuDEQDg.mp4",
+        "video": true,
+        "elsewhere": []
     }
 ]
