@@ -8,7 +8,7 @@ tags:
     - CSS
     - JavaScript
 status: Done
-year: 2020
+year: 2021
 description: An alternative widget for Discord servers
 ---
 
