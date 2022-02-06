@@ -15,4 +15,4 @@ description: A programming language made in Python.
     CorLang
 </h1>
 
-[Website](https://c1200.js.org/CorLang) &bullet; [Documentation](https://c1200.js.org/CorLang/docs)
+[Website](https://c1200.js.org/CorLang) • [Documentation](https://c1200.js.org/CorLang/docs)
